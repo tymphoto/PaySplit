@@ -53,8 +53,12 @@ app.get('/logout', async (req, res) => {
 
 app.post('/register', async (req, res) => {
   try {
-    const { email, password, name } = req.body;
-    const result = await User.create({ email, password: await Bcrypt.hash(password), name });
+    const {
+      email, password, name, telephone,
+    } = req.body;
+    const result = await User.create({
+      email, password: await Bcrypt.hash(password), name, telephone,
+    });
     if (result.id) {
       req.session.userName = result.name;
       req.session.userId = result.id;

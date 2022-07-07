@@ -9,10 +9,15 @@ const Bcrypt = require('./utils/bcrypt');
 
 const app = express();
 
+const menuRouter = require('./routers/menuRouter')
+
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(path.join(process.env.PWD, 'public')));
+
+
+app.use('/', menuRouter)
 
 const sessionConfig = {
   name: 'cook',
@@ -54,10 +59,10 @@ app.get('/logout', async (req, res) => {
 app.post('/register', async (req, res) => {
   try {
     const {
-      email, password, name, telephone,
+      email, password, name, 
     } = req.body;
     const result = await User.create({
-      email, password: await Bcrypt.hash(password), name, telephone,
+      email, password: await Bcrypt.hash(password), name,
     });
     if (result.id) {
       req.session.userName = result.name;

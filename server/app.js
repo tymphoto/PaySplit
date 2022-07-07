@@ -10,6 +10,7 @@ const Bcrypt = require('./utils/bcrypt');
 const app = express();
 
 const menuRouter = require('./routers/menuRouter')
+const orderRouter = require('./routers/orderRouter')
 
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
@@ -18,6 +19,7 @@ app.use(express.static(path.join(process.env.PWD, 'public')));
 
 
 app.use('/', menuRouter)
+app.use('/order', orderRouter)
 
 const sessionConfig = {
   name: 'cook',

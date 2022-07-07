@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import NavbarBootstrap from './components/Navbar/NavbarBootstrap';
 import AuthRoute from './components/AuthRoute/AuthRoute';
 import UserForm from './components/UserForm/UserForm';
+import MenuPage from './components/MenuPage/MenuPage';
 
 function App() {
   return (
@@ -17,6 +18,15 @@ function App() {
               <div>
                 MAIN
               </div>
+            )}
+          />
+
+          <Route
+            path="/menuPage"
+            element={(
+              <AuthRoute>
+                <MenuPage />
+              </AuthRoute>
             )}
           />
 

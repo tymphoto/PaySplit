@@ -5,6 +5,7 @@ import NavbarBootstrap from './components/Navbar/NavbarBootstrap';
 import AuthRoute from './components/AuthRoute/AuthRoute';
 import UserForm from './components/UserForm/UserForm';
 import MenuPage from './components/MenuPage/MenuPage';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -29,22 +30,7 @@ function App() {
               </div>
             )}
           />
-          <Route
-            path="/lk"
-            element={(
-              <div>
-                LK
-              </div>
-            )}
-          />
-          <Route
-            path="/friends"
-            element={(
-              <div>
-                Friends
-              </div>
-            )}
-          />
+
           <Route
             path="/auth"
             element={(
@@ -53,6 +39,7 @@ function App() {
               </AuthRoute>
             )}
           />
+
           <Route
             path="*"
             element={(
@@ -64,7 +51,7 @@ function App() {
           />
         </Routes>
       </div>
-
+      <Footer />
     </div>
   );
 }

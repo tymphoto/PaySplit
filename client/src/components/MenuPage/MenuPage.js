@@ -24,7 +24,6 @@ function MenuPage() {
         </ol>
       </div>
     </div>
-
   );
 }
 

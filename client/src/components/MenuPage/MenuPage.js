@@ -12,15 +12,17 @@ function MenuPage() {
 
   return (
     <div>
-      {menu.map((el) => (
-        <div>
-          {el.name}
-          {el.price}
-          {el.img} 
-        </div>
-      ))}
-
+      <div>Product</div>
+      <div>Product</div>
+      <div>Product</div>
+      <div>Product</div>
+      <div>Product</div>
+      <div>Product</div>
+      <div>Product</div>
+      <div>Product</div>
+      <div>Product</div>
     </div>
+
   );
 }
 

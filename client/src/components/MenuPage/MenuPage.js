@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getMenuThunk } from '../../redux/actions/MenuAction';
 import Products from '../Products/Products';
+import MyButton from '../MyButton/MyButton';
+import { putToCheck } from '../../redux/actions/CheckAction';
 import './Menu.css';
 
 function MenuPage() {
@@ -15,10 +17,11 @@ function MenuPage() {
   return (
     <div>
 
-      <ol className="menu" >
+      <ol className="menu">
         {menu.map((el) => (
           <li>
-            <Products name={el.name} price={el.price} img={el.img} />
+            <Products name={el.name} price={el.price} img={el.img} id={el.id} />
+            <MyButton func={putToCheck(el)}>Добавить в чек</MyButton>
           </li>
         ))}
       </ol>

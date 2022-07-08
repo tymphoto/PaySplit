@@ -6,6 +6,7 @@ import AuthRoute from './components/AuthRoute/AuthRoute';
 import UserForm from './components/UserForm/UserForm';
 import MenuPage from './components/MenuPage/MenuPage';
 import Footer from './components/Footer/Footer';
+import NewCheck from './components/NewCheck/NewCheck';
 
 function App() {
   return (
@@ -26,9 +27,7 @@ function App() {
           <Route
             path="/newCheck"
             element={(
-              <div>
-                newCheck
-              </div>
+              <NewCheck />
             )}
           />
 

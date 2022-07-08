@@ -16,7 +16,7 @@ function MenuPage() {
         <div>
           {el.name}
           {el.price}
-          {el.img}
+          {el.img} 
         </div>
       ))}
 

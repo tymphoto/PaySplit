@@ -13,7 +13,7 @@ function App() {
       <div className="flex">
         <Routes>
           <Route
-            path="/"
+            path="/main"
             element={(
               <div>
                 MAIN
@@ -22,7 +22,7 @@ function App() {
           />
 
           <Route
-            path="/menuPage"
+            path="/"
             element={(
               <AuthRoute>
                 <MenuPage />

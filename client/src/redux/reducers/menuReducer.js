@@ -1,6 +1,6 @@
 import { GET_MENU } from '../constants/constants';
 
-export const MenuReducer = (state = [], action) => {
+const menuReducer = (state = [], action) => {
   const { type, payload } = action;
 
   switch (type) {

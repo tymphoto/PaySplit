@@ -1,16 +1,24 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getMenuReq } from '..';
+import { getMenuThunk } from '../../redux/actions/MenuAction';
 
 function MenuPage() {
-  const {  } = useSelector((state) => state);
+  const { menu } = useSelector((state) => state);
+  const dispatch = useDispatch();
+  console.log(menu);
   useEffect(() => {
-    dispatch(getMenuReq(id));
-  }, [id]);
+    dispatch(getMenuThunk());
+  }, []);
+
   return (
     <div>
-
-      ghdgghd
+      {menu.map((el) => (
+        <div>
+          {el.name}
+          {el.price}
+          {el.img}
+        </div>
+      ))}
 
     </div>
   );

@@ -4,22 +4,17 @@ const cors = require('cors');
 const path = require('path');
 const session = require('express-session');
 const FileStore = require('session-file-store')(session);
-const { User } = require('./db/models');
+const { Users } = require('./db/models');
 const Bcrypt = require('./utils/bcrypt');
+const menuRouter = require('./routers/menuRouter');
+const orderRouter = require('./routers/orderRouter');
 
 const app = express();
-
-const menuRouter = require('./routers/menuRouter')
-const orderRouter = require('./routers/orderRouter')
 
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(path.join(process.env.PWD, 'public')));
-
-
-app.use('/', menuRouter)
-app.use('/order', orderRouter)
 
 const sessionConfig = {
   name: 'cook',
@@ -39,7 +34,7 @@ app.use(session(sessionConfig));
 app.get('/auth', async (req, res) => {
   console.log(req);
   try {
-    const result = await User.findByPk(req.session.userId);
+    const result = await Users.findByPk(req.session.userId);
     res.json(result);
   } catch (error) {
     console.log(error);
@@ -61,9 +56,9 @@ app.get('/logout', async (req, res) => {
 app.post('/register', async (req, res) => {
   try {
     const {
-      email, password, name, 
+      email, password, name,
     } = req.body;
-    const result = await User.create({
+    const result = await Users.create({
       email, password: await Bcrypt.hash(password), name,
     });
     if (result.id) {
@@ -80,10 +75,12 @@ app.post('/register', async (req, res) => {
 app.post('/login', async (req, res) => {
   try {
     const { email, password } = req.body;
-    const result = await User.findOne({ where: { email } });
+    console.log(req.body);
+    const result = await Users.findOne({ where: { email } });
     if (await Bcrypt.compare(password, result.password)) {
       req.session.userName = result.name;
       req.session.userId = result.id;
+      console.log(result);
       return res.json(result);
     }
     throw Error(result);
@@ -91,6 +88,9 @@ app.post('/login', async (req, res) => {
     return res.json(error);
   }
 });
+
+app.use('/', menuRouter);
+app.use('/order', orderRouter);
 
 app.listen(process.env.PORT, () => {
   console.log('server start ', process.env.PORT);

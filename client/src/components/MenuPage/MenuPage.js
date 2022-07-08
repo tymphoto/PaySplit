@@ -14,6 +14,7 @@ function MenuPage() {
 
   return (
     <div>
+
       <ol className="menu" >
         {menu.map((el) => (
           <li>
@@ -21,6 +22,7 @@ function MenuPage() {
           </li>
         ))}
       </ol>
+
     </div>
 
   );

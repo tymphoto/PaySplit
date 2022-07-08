@@ -15,19 +15,18 @@ function MenuPage() {
   }, []);
 
   return (
-    <div>
-
-      <ol className="menu">
-        {menu.map((el) => (
-          <li>
-            <Products name={el.name} price={el.price} img={el.img} id={el.id} />
-            <MyButton func={putToCheck(el)}>Добавить в чек</MyButton>
-          </li>
-        ))}
-      </ol>
-
+    <div className="prod">
+      <div>
+        <ol className="menu">
+          {menu.map((el) => (
+            <li>
+              <Products name={el.name} price={el.price} img={el.img} />
+              <MyButton func={putToCheck(el)}>Добавить в чек</MyButton>
+            </li>
+          ))}
+        </ol>
+      </div>
     </div>
-
   );
 }
 

@@ -14,7 +14,6 @@ function App() {
       <NavbarBootstrap />
       <div className="flex">
         <Routes>
-
           <Route
             path="/"
             element={(

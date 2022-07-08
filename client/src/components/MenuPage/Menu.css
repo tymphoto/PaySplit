@@ -1,0 +1,19 @@
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; 
+
+  
+  
+}
+
+.img {
+  max-width: 200px;
+  max-height: 200px;
+}
+li {
+  list-style-type: none; /* Убираем маркеры */
+}
+
+
+

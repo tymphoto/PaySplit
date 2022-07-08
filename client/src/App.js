@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import NavbarBootstrap from './components/Navbar/NavbarBootstrap';
 import AuthRoute from './components/AuthRoute/AuthRoute';
 import UserForm from './components/UserForm/UserForm';
+import MenuPage from './components/MenuPage/MenuPage';
 
 function App() {
   return (
@@ -12,11 +13,20 @@ function App() {
       <div className="flex">
         <Routes>
           <Route
-            path="/"
+            path="/main"
             element={(
               <div>
                 MAIN
               </div>
+            )}
+          />
+
+          <Route
+            path="/"
+            element={(
+              <AuthRoute>
+                <MenuPage />
+              </AuthRoute>
             )}
           />
 

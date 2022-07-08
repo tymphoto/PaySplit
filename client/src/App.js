@@ -13,15 +13,6 @@ function App() {
       <div className="flex">
         <Routes>
           <Route
-            path="/main"
-            element={(
-              <div>
-                MAIN
-              </div>
-            )}
-          />
-
-          <Route
             path="/"
             element={(
               <AuthRoute>

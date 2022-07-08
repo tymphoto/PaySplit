@@ -13,14 +13,16 @@ function MenuPage() {
   }, []);
 
   return (
-    <div>
-      <ol className="menu" >
-        {menu.map((el) => (
-          <li>
-            <Products name={el.name} price={el.price} img={el.img} />
-          </li>
-        ))}
-      </ol>
+    <div className="prod">
+      <div>
+        <ol className="menu">
+          {menu.map((el) => (
+            <li>
+              <Products name={el.name} price={el.price} img={el.img} />
+            </li>
+          ))}
+        </ol>
+      </div>
     </div>
 
   );

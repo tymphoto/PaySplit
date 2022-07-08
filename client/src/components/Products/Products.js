@@ -5,8 +5,8 @@ import './Products.css';
 
 function Products({ ...props }) {
   return (
-    <Card style={{ width: '18rem' }}>
-      <Card.Img className="img " variant="top" src={props.img} alt="image" />
+    <Card>
+      <Card.Img className="im" variant="top" src={props.img} alt="image" />
       <Card.Body>
         <Card.Title>{props.name}</Card.Title>
         <Card.Text>

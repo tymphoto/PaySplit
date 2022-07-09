@@ -1,4 +1,7 @@
-import { PUT_TO_CHECK, DELETE_FROM_CHECK } from '../constants/constants';
+/* eslint-disable consistent-return */
+import {
+  PUT_TO_CHECK, DELETE_FROM_CHECK, INCREMENT, DECREMENT,
+} from '../constants/constants';
 
 const initialState = [];
 

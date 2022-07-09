@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-filename-extension */
+/* eslint-disable react/react-in-jsx-scope */
 import { Routes, Route } from 'react-router-dom';
 import './styles/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';

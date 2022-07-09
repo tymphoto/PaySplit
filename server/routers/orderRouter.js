@@ -8,9 +8,9 @@ router.get('/:id', async (req, res) => {
     const { id } = req.params;
     const order = await Orders.findOne({
       where: { check_id: id },
-      include: Checks,
-      Products,
-
+      include: {
+        model: Checks,
+      },
     });
     console.log(JSON.parse(JSON.stringify(order), '============================='));
   } catch (error) {

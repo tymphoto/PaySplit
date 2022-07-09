@@ -24,14 +24,11 @@ function NavbarBootstrap() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
+              <Nav.Link as={Link} to="/">
+                Меню
+              </Nav.Link>
               <Nav.Link as={Link} to="/newCheck">
                 Новый чек
-              </Nav.Link>
-              <Nav.Link as={Link} to="/lk">
-                Личный кабинет
-              </Nav.Link>
-              <Nav.Link as={Link} to="/friends">
-                Собутыльники
               </Nav.Link>
               {user ? null : renderLogin()}
             </Nav>

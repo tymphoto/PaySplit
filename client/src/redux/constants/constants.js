@@ -4,6 +4,5 @@ export const LOGOUT_USER = 'LOGOUT_USER';
 export const GET_MENU = 'GET_MENU';
 export const PUT_TO_CHECK = 'PUT_TO_CHECK';
 export const DELETE_FROM_CHECK = 'DELETE_FROM_CHECK';
-
-export const DECREMENT = 'DECREMENT';
-export const INCREMENT = 'INCREMENT';
+export const PLUS_ELEMENT_TO_CHECK = 'PLUS_ELEMENT_TO_CHECK';
+export const MINUS_ELEMENT_TO_CHECK = 'MINUS_ELEMENT_TO_CHECK';

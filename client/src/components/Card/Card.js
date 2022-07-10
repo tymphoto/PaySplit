@@ -18,7 +18,7 @@ function Card({ el, ...props }) {
     <div>
       <Products el={el} />
       <CounterButton counter={counter} setCounter={setCounter} />
-      <MyButton onClick={() => dispatch(() => putToCheck(el))}>Добавить в чек</MyButton>
+      <MyButton func={putToCheck(el, counter)}>Добавить в чек</MyButton>
     </div>
   );
 }

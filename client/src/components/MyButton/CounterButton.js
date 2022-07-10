@@ -1,7 +1,6 @@
 /* eslint-disable keyword-spacing */
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { actionDecrement, actionIncrement } from '../../redux/actions/CounterAction';
 import './CounterButton.css';
 
 function CounterButton({ setCounter, counter }) {

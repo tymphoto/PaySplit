@@ -12,7 +12,7 @@ export const minusElementCount = (data) => (
   { type: MINUS_ELEMENT_TO_CHECK, payload: data }
 );
 
-export const getCreateThunk = (body) => async (dispatch) => {
+export const createCheckThunk = (body) => async (dispatch) => {
   console.log(body);
   const response = await fetch(
     'http://localhost:3003/checkCreate',

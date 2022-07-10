@@ -1,8 +1,12 @@
-import React from 'react';
+/* eslint-disable no-console */
+/* eslint-disable no-return-assign */
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Products from '../Products/Products';
+import CounterButton from '../MyButton/CounterButton';
 import MyButton from '../MyButton/MyButton';
-import { deleteFromCheck, getCheckThunk } from '../../redux/actions/CheckAction';
+import { getCreateThunk, deleteFromCheck } from '../../redux/actions/CheckAction';
+import CardForNewCheck from '../Card/CardForNewCheck';
 
 function NewCheck() {
   const dispatch = useDispatch();
@@ -12,20 +16,31 @@ function NewCheck() {
   console.log(check);
   const data = { userId, prodId };
 
-  const create = () => getCheckThunk(data);
+  const create = () => getCreateThunk(data);
   const { newCheck } = useSelector((state) => state);
+  console.log(newCheck);
+  const getSumOfCheck = () => {
+    let sum = 0;
+    newCheck.forEach((el) => sum += Number(el.data.price) * el.count);
+    return sum;
+  };
+
   return (
     <div>
       <ol className="menu">
         {newCheck.map((el) => (
           <li>
-            <Products name={el.name} price={el.price} img={el.img} />
-            <MyButton func={deleteFromCheck(el)}>Удалить</MyButton>
+            <CardForNewCheck el={el} />
           </li>
         ))}
       </ol>
       {check.length > 0 && <MyButton func={create()}>Оформить заказ</MyButton>}
 
+      <div>
+        Итого:
+        {getSumOfCheck()}
+        ₽
+      </div>
     </div>
   );
 }

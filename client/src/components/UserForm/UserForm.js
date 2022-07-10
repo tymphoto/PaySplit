@@ -38,16 +38,6 @@ function UserForm() {
                 <Form.Control type="text" value={form.name || ''} name="name" disabled={loginToggle} onChange={handleChange} placeholder="Name" />
               </Form.Group>
             </div>
-
-            <div className="container">
-              <Form.Group className="mb-3" controlId="formBasicPhone">
-                <Form.Label>Phone</Form.Label>
-                <Form.Control type="text" value={form.telephone || ''} name="telephone" disabled={loginToggle} onChange={handleChange} placeholder="+79997778899" />
-                <Form.Text className="text-muted">
-                  Our company never share your phone with anyone else.
-                </Form.Text>
-              </Form.Group>
-            </div>
           </div>
         ) }
 

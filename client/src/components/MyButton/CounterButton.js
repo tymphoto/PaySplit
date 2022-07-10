@@ -1,3 +1,5 @@
+/* eslint-disable import/extensions */
+/* eslint-disable import/no-unresolved */
 /* eslint-disable keyword-spacing */
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -5,7 +7,6 @@ import './CounterButton.css';
 
 function CounterButton({ setCounter, counter }) {
   // const dispatch = useDispatch();
-
   return (
     <div className="buttons mt-3 mb-1 count">
       <div>

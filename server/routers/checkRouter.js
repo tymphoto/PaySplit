@@ -1,17 +1,27 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-await-in-loop */
+/* eslint-disable no-undef */
 const express = require('express');
 
 const router = express.Router();
 const { Checks, Orders } = require('../db/models');
 
 router.post('/', async (req, res) => {
-  console.log(req.body, '====================');
-  // console.log('123');
   try {
-    const newCheck = await Checks.create({ user_id: req.body.body });
-    console.log(newCheck.id);
-    // const newOrder = await Orders.create({ check_id: newCheck.id });
+    const userID = req.body.body.data.userId;
+    const products = req.body.body.newCheck;
+    const newCheck = await Checks.create({ user_id: userID });
+    for (let i = 0; i < products.length; i += 1) {
+      const prodID = req.body.body.newCheck[i].data.id;
+      const { count } = req.body.body.newCheck[i];
 
-    res.json({ newCheck });
+      const newOrder = await Orders.create({
+        check_id: newCheck.id,
+        product_id: prodID,
+        counter: count,
+      });
+    }
+    res.sendStatus(200);
   } catch (error) {
     console.log(error);
   }

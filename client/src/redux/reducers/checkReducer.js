@@ -12,12 +12,13 @@ const CheckReducer = (state = initialState, action) => {
   switch (type) {
     case PUT_TO_CHECK:
       return [...state, payload];
-    case DELETE_FROM_CHECK:
-      // return state.filter((el) => el.data.id !== payload.data.id);
 
-      return state.filter((el) => el.id !== payload.id);
+    case DELETE_FROM_CHECK:
+      return state.filter((el) => el.data.id !== payload.data.id);
+
     case CREATE_NEW_CHECK:
       return [{ newCheck: payload }];
+
     case PLUS_ELEMENT_TO_CHECK:
       return state.map((el) => {
         if (el.data.id === payload.data.id) {
@@ -26,6 +27,7 @@ const CheckReducer = (state = initialState, action) => {
         }
         return el;
       });
+
     case MINUS_ELEMENT_TO_CHECK:
       return state.map((el) => {
         if (el.data.id === payload.data.id) {
@@ -34,6 +36,7 @@ const CheckReducer = (state = initialState, action) => {
         }
         return el;
       });
+
     default:
       return state;
   }

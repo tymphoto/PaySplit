@@ -12,13 +12,13 @@ function NewCheck() {
   const dispatch = useDispatch();
   const userId = useSelector((state) => state.user.id);
   const check = useSelector((state) => state.newCheck);
-  const prodId = check.map((el) => el.id);
-  console.log(check);
-  const data = { userId, prodId };
 
-  const create = () => getCreateThunk(data);
   const { newCheck } = useSelector((state) => state);
+  const prodId = newCheck.map((el) => el.data.id);
   console.log(newCheck);
+
+  const data = { userId };
+  const create = () => getCreateThunk({ data, newCheck });
   const getSumOfCheck = () => {
     let sum = 0;
     newCheck.forEach((el) => sum += Number(el.data.price) * el.count);

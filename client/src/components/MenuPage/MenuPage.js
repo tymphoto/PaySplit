@@ -9,7 +9,6 @@ import './Menu.css';
 function MenuPage() {
   const { menu } = useSelector((state) => state);
   const dispatch = useDispatch();
-  console.log(menu);
   useEffect(() => {
     dispatch(getMenuThunk());
   }, []);

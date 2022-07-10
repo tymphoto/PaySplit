@@ -8,6 +8,7 @@ const { Users } = require('./db/models');
 const Bcrypt = require('./utils/bcrypt');
 const menuRouter = require('./routers/menuRouter');
 const orderRouter = require('./routers/orderRouter');
+const checkRouter = require('./routers/checkRouter');
 
 const app = express();
 
@@ -32,7 +33,6 @@ const sessionConfig = {
 app.use(session(sessionConfig));
 
 app.get('/auth', async (req, res) => {
-  console.log(req);
   try {
     const result = await Users.findByPk(req.session.userId);
     res.json(result);
@@ -75,12 +75,12 @@ app.post('/register', async (req, res) => {
 app.post('/login', async (req, res) => {
   try {
     const { email, password } = req.body;
-    console.log(req.body);
+    // console.log(req.body);
     const result = await Users.findOne({ where: { email } });
     if (await Bcrypt.compare(password, result.password)) {
       req.session.userName = result.name;
       req.session.userId = result.id;
-      console.log(result);
+      // console.log(result);
       return res.json(result);
     }
     throw Error(result);
@@ -91,6 +91,7 @@ app.post('/login', async (req, res) => {
 
 app.use('/', menuRouter);
 app.use('/order', orderRouter);
+app.use('/checkCreate', checkRouter);
 
 app.listen(process.env.PORT, () => {
   console.log('server start ', process.env.PORT);

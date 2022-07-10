@@ -2,10 +2,17 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Products from '../Products/Products';
 import MyButton from '../MyButton/MyButton';
-import { deleteFromCheck } from '../../redux/actions/CheckAction';
+import { deleteFromCheck, getCheckThunk } from '../../redux/actions/CheckAction';
 
 function NewCheck() {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
+  const userId = useSelector((state) => state.user.id);
+  const check = useSelector((state) => state.newCheck);
+  const prodId = check.map((el) => el.id);
+  console.log(check);
+  const data = { userId, prodId };
+
+  const create = () => getCheckThunk(data);
   const { newCheck } = useSelector((state) => state);
   return (
     <div>
@@ -17,6 +24,7 @@ function NewCheck() {
           </li>
         ))}
       </ol>
+      {check.length > 0 && <MyButton func={create()}>Оформить заказ</MyButton>}
 
     </div>
   );

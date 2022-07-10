@@ -28,7 +28,9 @@ function App() {
           <Route
             path="/newCheck"
             element={(
-              <NewCheck />
+              <AuthRoute>
+                <NewCheck />
+              </AuthRoute>
             )}
           />
 

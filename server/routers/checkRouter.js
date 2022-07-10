@@ -21,7 +21,7 @@ router.post('/', async (req, res) => {
         counter: count,
       });
     }
-    res.sendStatus(200);
+    res.json(newCheck);
   } catch (error) {
     console.log(error);
   }

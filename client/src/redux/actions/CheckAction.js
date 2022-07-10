@@ -13,7 +13,6 @@ export const minusElementCount = (data) => (
 );
 
 export const getCreateThunk = (body) => async (dispatch) => {
-  console.log(body);
   const response = await fetch(
     'http://localhost:3003/checkCreate',
     {
@@ -26,9 +25,9 @@ export const getCreateThunk = (body) => async (dispatch) => {
   );
   {
     try {
-      const result = await response.json();
-      // dispatch(getNewCheck(result));
-      console.log(result);
+      if (response.ok) {
+        const result = await response.json();
+      }
     } catch (error) {
       console.log(error);
     }

@@ -11,7 +11,6 @@ import CardForNewCheck from '../Card/CardForNewCheck';
 function NewCheck() {
   const dispatch = useDispatch();
   const userId = useSelector((state) => state.user.id);
-  const check = useSelector((state) => state.newCheck);
 
   const { newCheck } = useSelector((state) => state);
   const prodId = newCheck.map((el) => el.data.id);
@@ -34,13 +33,13 @@ function NewCheck() {
           </li>
         ))}
       </ol>
-      {check.length > 0 && <MyButton func={create()}>Оформить заказ</MyButton>}
 
       <div>
         Итого:
         {getSumOfCheck()}
         ₽
       </div>
+      {newCheck.length > 0 && <MyButton func={create()}>Оформить заказ</MyButton>}
     </div>
   );
 }

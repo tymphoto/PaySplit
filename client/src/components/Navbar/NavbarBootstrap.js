@@ -30,6 +30,9 @@ function NavbarBootstrap() {
               <Nav.Link as={Link} to="/newCheck">
                 Новый чек
               </Nav.Link>
+              <Nav.Link as={Link} to="/bill">
+                Bill
+              </Nav.Link>
               {user ? null : renderLogin()}
             </Nav>
             {user ? renderLogout() : null}

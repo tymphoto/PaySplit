@@ -2,10 +2,12 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
+const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const FileStore = require('session-file-store')(session);
 const { Users } = require('./db/models');
 const Bcrypt = require('./utils/bcrypt');
+const checkSession = require('./middlewares/checkSession');
 const menuRouter = require('./routers/menuRouter');
 const orderRouter = require('./routers/orderRouter');
 
@@ -30,6 +32,8 @@ const sessionConfig = {
 };
 
 app.use(session(sessionConfig));
+app.use(cookieParser());
+app.use(checkSession);
 
 app.get('/auth', async (req, res) => {
   console.log(req);

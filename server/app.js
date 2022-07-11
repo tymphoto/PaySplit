@@ -11,6 +11,7 @@ const checkSession = require('./middlewares/checkSession');
 const menuRouter = require('./routers/menuRouter');
 const orderRouter = require('./routers/orderRouter');
 const checkRouter = require('./routers/checkRouter');
+const prodCreateRouter = require('./routers/prodCreate');
 
 const app = express();
 
@@ -96,6 +97,7 @@ app.post('/login', async (req, res) => {
 app.use('/', menuRouter);
 app.use('/order', orderRouter);
 app.use('/checkCreate', checkRouter);
+app.use('/prodCreate', prodCreateRouter);
 
 app.listen(process.env.PORT, () => {
   console.log('server start ', process.env.PORT);

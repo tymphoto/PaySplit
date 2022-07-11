@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { putToCheck } from '../../redux/actions/CheckAction';
 import { getMenuThunk } from '../../redux/actions/MenuAction';
+import AddToCheck from '../MyButton/AddToCheck';
 import CounterButton from '../MyButton/CounterButton';
-import MyButton from '../MyButton/MyButton';
 import Products from '../Products/Products';
 
 function Card({ el, ...props }) {
@@ -18,7 +18,7 @@ function Card({ el, ...props }) {
     <div>
       <Products el={el} />
       <CounterButton counter={counter} setCounter={setCounter} />
-      <MyButton func={putToCheck(el, counter)}>Добавить в чек</MyButton>
+      <AddToCheck func={putToCheck(el, counter)} counter={counter}>Добавить в чек</AddToCheck>
     </div>
   );
 }

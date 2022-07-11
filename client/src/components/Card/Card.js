@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { putToCheck } from '../../redux/actions/CheckAction';
 import { getMenuThunk } from '../../redux/actions/MenuAction';
 import AddToCheck from '../MyButton/AddToCheck';

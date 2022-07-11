@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Form } from 'react-bootstrap';
+import { Button, Form } from 'react-bootstrap';
 import { getMenuThunk } from '../../redux/actions/MenuAction';
 import Products from '../Products/Products';
 import MyButton from '../MyButton/MyButton';
@@ -8,6 +8,7 @@ import { putToCheck } from '../../redux/actions/CheckAction';
 import './Menu.css';
 import CounterButton from '../MyButton/CounterButton';
 import Card from '../Card/Card';
+import NewProduct from '../AddNewProduct/NewProduct';
 
 function MenuPage() {
   const { menu } = useSelector((state) => state);
@@ -17,10 +18,13 @@ function MenuPage() {
 
   useEffect(() => {
     dispatch(getMenuThunk());
-  }, []);
+  }, [sortedMenu]);
 
   return (
     <div className="prod">
+      <NewProduct />
+
+      {/* <MyButton func={}>Добавить блюдо</MyButton> */}
       <Form.Control className="inputSearch mt-3 mb-2" type="text" placeholder="Найти товар" value={search} onChange={(e) => setSearch(e.target.value)} />
       <div>
         <ol className="menu mt-2">

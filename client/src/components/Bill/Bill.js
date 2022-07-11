@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-no-bind */
+/* eslint-disable no-return-assign */
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Form, Button } from 'react-bootstrap';
@@ -13,7 +15,11 @@ function Bill() {
   }
 
   function addCustomer(e) {
-    setCustomers((prev) => ([...prev, { ...form }]));
+    if (Object.keys(form).length === 0) {
+      alert('Введите имя');
+    } else {
+      setCustomers((prev) => ([...prev, { ...form }]));
+    }
   }
 
   const deleteCustomer = (name) => {

@@ -7,7 +7,7 @@ function QR() {
       <QRCode value={url} />
     </div>
   );
-  const location = window.location.href;
+  const location = 'http://localhost:3000/bill';
   console.log(location);
   return (
     <div>

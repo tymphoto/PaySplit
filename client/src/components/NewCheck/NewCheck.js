@@ -1,5 +1,7 @@
+/* eslint-disable no-return-assign */
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import MyButton from '../MyButton/MyButton';
 import { createCheckThunk } from '../../redux/actions/CheckAction';
 import CardForNewCheck from '../Card/CardForNewCheck';
@@ -35,7 +37,11 @@ function NewCheck() {
         {getSumOfCheck()}
         ₽
       </div>
-      {newCheck.length > 0 && <MyButton func={create()}>Оформить заказ</MyButton>}
+      {newCheck.length > 0 && (
+      <Link to="/QR">
+        <MyButton func={create()}>Оформить заказ</MyButton>
+      </Link>
+      )}
     </div>
   );
 }

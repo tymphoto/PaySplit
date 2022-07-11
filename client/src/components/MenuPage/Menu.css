@@ -3,9 +3,11 @@
   flex-wrap: wrap;
   justify-content: space-around; 
 }
+
 li {
   list-style-type: none; /* Убираем маркеры */
 }
+
 .prod {
   display: flex;
   justify-content: space-evenly;

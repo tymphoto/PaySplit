@@ -9,6 +9,8 @@ import UserForm from './components/UserForm/UserForm';
 import MenuPage from './components/MenuPage/MenuPage';
 import Footer from './components/Footer/Footer';
 import NewCheck from './components/NewCheck/NewCheck';
+import QR from './components/QR/QR';
+import Bill from './components/Bill/Bill';
 
 function App() {
   return (
@@ -28,7 +30,23 @@ function App() {
           <Route
             path="/newCheck"
             element={(
-              <NewCheck />
+              <AuthRoute>
+                <NewCheck />
+              </AuthRoute>
+            )}
+          />
+
+          <Route
+            path="/QR"
+            element={(
+              <QR />
+            )}
+          />
+
+          <Route
+            path="/bill"
+            element={(
+              <Bill />
             )}
           />
 

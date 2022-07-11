@@ -1,15 +1,19 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import Products from '../Products/Products';
-import CounterButton from '../MyButton/CounterButton';
 import MyButton from '../MyButton/MyButton';
-import { deleteFromCheck } from '../../redux/actions/CheckAction';
+import { createCheckThunk } from '../../redux/actions/CheckAction';
 import CardForNewCheck from '../Card/CardForNewCheck';
 
 function NewCheck() {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
+  const userId = useSelector((state) => state.user.id);
+
   const { newCheck } = useSelector((state) => state);
+  const prodId = newCheck.map((el) => el.data.id);
   console.log(newCheck);
+
+  const data = { userId };
+  const create = () => createCheckThunk({ data, newCheck });
   const getSumOfCheck = () => {
     let sum = 0;
     newCheck.forEach((el) => sum += Number(el.data.price) * el.count);
@@ -25,11 +29,13 @@ function NewCheck() {
           </li>
         ))}
       </ol>
+
       <div>
         Итого:
         {getSumOfCheck()}
         ₽
       </div>
+      {newCheck.length > 0 && <MyButton func={create()}>Оформить заказ</MyButton>}
     </div>
   );
 }

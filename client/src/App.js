@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import NavbarBootstrap from './components/Navbar/NavbarBootstrap';
 import AuthRoute from './components/AuthRoute/AuthRoute';
 import UserForm from './components/UserForm/UserForm';
-import MenuPage from './components/MenuPage/MenuPage';
+import Category from './components/CategoryPage/Category';
 import Footer from './components/Footer/Footer';
 import NewCheck from './components/NewCheck/NewCheck';
 import QR from './components/QR/QR';
@@ -22,7 +22,7 @@ function App() {
             path="/"
             element={(
               <AuthRoute>
-                <MenuPage />
+                <Category />
               </AuthRoute>
             )}
           />

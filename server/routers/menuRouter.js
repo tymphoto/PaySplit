@@ -1,11 +1,23 @@
 const express = require('express');
 
 const router = express.Router();
-const { Products } = require('../db/models');
+const { Categories, Products } = require('../db/models');
 
 router.get('/', async (req, res) => {
   try {
-    const products = await Products.findAll();
+    const products = await Categories.findAll();
+    res.json(products);
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+router.get('/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const products = await Products.findAll(
+      { where: { categ_id: id } },
+    );
     res.json(products);
   } catch (error) {
     console.log(error);

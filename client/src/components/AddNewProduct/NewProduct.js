@@ -1,55 +1,52 @@
 /* eslint-disable no-undef */
-/* eslint-disable no-unused-expressions */
-/* eslint-disable max-len */
-/* eslint-disable no-console */
-import React, { useCallback, useRef, useState } from 'react';
+import React, {
+  useCallback, useRef, useState, useEffect,
+} from 'react';
 import { Form, Button } from 'react-bootstrap';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { createProdThunk } from '../../redux/actions/MenuAction';
+import { getCategoryThunk } from '../../redux/actions/MenuAction';
 
 function NewProduct() {
   const [inputs, setInputs] = useState({ name: '', price: '' });
   const myFile = useRef();
-  const [posts, setPosts] = useState([]);
-
+  const [posts, setPosts] = useState();
+  const [categoryId, SetCatId] = useState('');
   const dispatch = useDispatch();
+  const { category } = useSelector((s) => s.menu);
   const navigate = useNavigate();
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   dispatch(createProdThunk());
-  //   setForm({});
-  //   navigate('/');
-  // };
+  useEffect(() => {
+    dispatch(getCategoryThunk());
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     const formData = new FormData();
     formData.append('name', inputs.name);
     formData.append('price', inputs.price);
+    formData.append('category', categoryId);
     formData.append('myFile', myFile.current.files[0]);
-
+    console.log(formData);
     fetch('http://localhost:3003/prodCreate', { method: 'Post', body: formData })
       .then((response) => response.json())
       .then((result) => setPosts((prev) => ([...prev, result])))
       .finally(() => setInputs({}));
   };
-  // const handleInputs = (e) => {
-  //   if (e.target.type === 'file') {
-  //     setInputs((prev) => ({
-  //       ...prev,
-  //       [e.target.name]: e.target.value,
-  //       file: e.target.file,
-  //     }));
-  //   } else setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  // const ChangeId = (e) => {
+  //   SetCatId(e.target.id);
+  //   console.log(catId);
   // };
 
   const handleInputs = useCallback((e) => {
-    console.log('3222');
     setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   }, []);
+
+  // const handleCategory = (e) => {
+  // };
+  console.log(categoryId);
 
   return (
     <Form onSubmit={handleSubmit}>
@@ -74,6 +71,23 @@ function NewProduct() {
           htmlFor="priceinput"
           id="priceinput"
         />
+
+        <Form.Control
+          aria-label="Default select example"
+          as="select"
+          onChange={(e) => SetCatId(e.target.value)}
+        >
+          <option>Select Category</option>
+          {category && category.map((el) => (
+            <option
+              value={el.id}
+
+            >
+              {el.name}
+            </option>
+          ))}
+        </Form.Control>
+
         <Form.Label>Image</Form.Label>
         <Form.Control
           type="file"
@@ -87,18 +101,6 @@ function NewProduct() {
         <Button type="submit"> ok</Button>
       </Form.Group>
     </Form>
-
-  //  <Input
-  //     value={inputs.myFile || ''}
-  //     name="myFile"
-  //     handleInputs={handleInputs}
-  //     placeholder="File"
-  //     type="file"
-  //     htmlFor="fileInput"
-  //     id="fileInput"
-  //   />
-  //   <button type="submit" className="btn btn-success">Success</button>
-  // </form>
   );
 }
 

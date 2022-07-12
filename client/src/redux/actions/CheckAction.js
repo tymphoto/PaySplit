@@ -11,7 +11,6 @@ export const plusElementCount = (data) => (
 export const minusElementCount = (data) => (
   { type: MINUS_ELEMENT_TO_CHECK, payload: data }
 );
-
 export const createCheckThunk = (body) => async (dispatch) => {
   const response = await fetch(
     'http://localhost:3003/checkCreate',

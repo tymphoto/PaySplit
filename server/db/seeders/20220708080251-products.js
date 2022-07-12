@@ -4,7 +4,7 @@ module.exports = {
       {
         name: 'Мохито',
         price: '650',
-        img: '../../public/img/mohito.jpg',
+        img: '/img/mohito.jpg',
         categ_id: 2,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -12,7 +12,7 @@ module.exports = {
       {
         name: 'Маргарита Классическая',
         price: '480',
-        img: '../../public/img/classic-margarita.jpg',
+        img: '/img/classic-margarita.jpg',
         categ_id: 2,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -20,7 +20,7 @@ module.exports = {
       {
         name: 'Маргарита "Флирт"',
         price: '460',
-        img: '../../public/img/margarita-flirt.jpg',
+        img: '/img/margarita-flirt.jpg',
         categ_id: 2,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -28,7 +28,7 @@ module.exports = {
       {
         name: 'Коктейль "Хуго"',
         price: '650',
-        img: '../../public/img/hugo.jpg',
+        img: '/img/hugo.jpg',
         categ_id: 2,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -36,7 +36,7 @@ module.exports = {
       {
         name: 'Пина Колада',
         price: '480',
-        img: '../../public/img/pina-kolada-creamy.jpg',
+        img: '/img/pina-kolada-creamy.jpg',
         categ_id: 2,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -44,7 +44,7 @@ module.exports = {
       {
         name: 'Коктейль Апероль Шприц',
         price: '660',
-        img: '../../public/img/aperol.jpg',
+        img: '/img/aperol.jpg',
         categ_id: 2,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -52,7 +52,7 @@ module.exports = {
       {
         name: 'Б-52',
         price: '490',
-        img: '../../public/img/b52.jpg',
+        img: '/img/b52.jpg',
         categ_id: 2,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -60,7 +60,7 @@ module.exports = {
       {
         name: 'Сидр Келвиш, Грушевый, п/сладкий',
         price: '350',
-        img: '../../public/img/sidr-kelvish.jpg',
+        img: '/img/sidr-kelvish.jpg',
         categ_id: 2,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -68,7 +68,7 @@ module.exports = {
       {
         name: 'Пиво "BLANCHE DE SILLY"',
         price: '450',
-        img: '../../public/img/blanch-silly.jpeg',
+        img: '/img/blanch-silly.jpeg',
         categ_id: 2,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -76,7 +76,7 @@ module.exports = {
       {
         name: 'Пиво "GROTWERG"',
         price: '760',
-        img: '../../public/img/grotwerg.jpg',
+        img: '/img/grotwerg.jpg',
         categ_id: 2,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -84,7 +84,7 @@ module.exports = {
       {
         name: 'Пиво "CHERNOVAR DARC"',
         price: '700',
-        img: '../../public/img/chernovar.jpg',
+        img: '/img/chernovar.jpg',
         categ_id: 2,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -92,7 +92,7 @@ module.exports = {
       {
         name: 'Водка "Белая березка"',
         price: '360',
-        img: '../../public/img/bereza.jpg',
+        img: '/img/bereza.jpg',
         categ_id: 2,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -100,7 +100,7 @@ module.exports = {
       {
         name: 'Водка "Русский стандарт"',
         price: '390',
-        img: '../../public/img/standart.jpg',
+        img: '/img/standart.jpg',
         categ_id: 2,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -108,7 +108,7 @@ module.exports = {
       {
         name: 'Водка "Финляндия"',
         price: '540',
-        img: '../../public/img/finlandia.jpg',
+        img: '/img/finlandia.jpg',
         categ_id: 2,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -116,7 +116,7 @@ module.exports = {
       {
         name: 'Водка "Пять Озер"',
         price: '270',
-        img: '../../public/img/5ozer.jpg',
+        img: '/img/5ozer.jpg',
         categ_id: 2,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -124,7 +124,7 @@ module.exports = {
       {
         name: 'Ред Лейбл',
         price: '620',
-        img: '../../public/img/redlable.jpg',
+        img: '/img/redlable.jpg',
         categ_id: 2,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -132,7 +132,7 @@ module.exports = {
       {
         name: 'Баллантайнс',
         price: '680',
-        img: '../../public/img/ballantines.jpg',
+        img: '/img/ballantines.jpg',
         categ_id: 2,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -140,7 +140,7 @@ module.exports = {
       {
         name: 'Джемесон',
         price: '720',
-        img: '../../public/img/jameson.jpg',
+        img: '/img/jameson.jpg',
         categ_id: 2,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -148,7 +148,7 @@ module.exports = {
       {
         name: 'Капитан Морган',
         price: '860',
-        img: '../../public/img/morgan.jpg',
+        img: '/img/morgan.jpg',
         categ_id: 2,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -156,7 +156,7 @@ module.exports = {
       {
         name: 'Сок Яблочный',
         price: '350',
-        img: '../../public/img/sok-yabloko.jpeg',
+        img: '/img/sok-yabloko.jpeg',
         categ_id: 1,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -164,7 +164,7 @@ module.exports = {
       {
         name: 'Фанта',
         price: '200',
-        img: '../../public/img/fanta.jpg',
+        img: '/img/fanta.jpg',
         categ_id: 1,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -172,7 +172,7 @@ module.exports = {
       {
         name: 'Кока-Кола',
         price: '200',
-        img: '../../public/img/coca-cola.png',
+        img: '/img/coca-cola.png',
         categ_id: 1,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -180,7 +180,7 @@ module.exports = {
       {
         name: 'Аква-Минерале',
         price: '200',
-        img: '../../public/img/aqua.jpg',
+        img: '/img/aqua.jpg',
         categ_id: 1,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -188,7 +188,7 @@ module.exports = {
       {
         name: 'Фреш',
         price: '300',
-        img: '../../public/img/fresh.jpg',
+        img: '/img/fresh.jpg',
         categ_id: 1,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -196,7 +196,7 @@ module.exports = {
       {
         name: 'Швепс',
         price: '250',
-        img: '../../public/img/schweppes.jpg',
+        img: '/img/schweppes.jpg',
         categ_id: 1,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -204,7 +204,7 @@ module.exports = {
       {
         name: 'Тоник',
         price: '250',
-        img: '../../public/img/tonik.jpg',
+        img: '/img/tonik.jpg',
         categ_id: 1,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -212,7 +212,7 @@ module.exports = {
       {
         name: 'Адреналин',
         price: '200',
-        img: '../../public/img/adrenalin.jpeg',
+        img: '/img/adrenalin.jpeg',
         categ_id: 1,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -220,7 +220,7 @@ module.exports = {
       {
         name: 'Карбонара',
         price: '700',
-        img: '../../public/img/karbonara.jpeg',
+        img: '/img/karbonara.jpeg',
         categ_id: 3,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -228,7 +228,7 @@ module.exports = {
       {
         name: 'Букатини',
         price: '700',
-        img: '../../public/img/bukatini.jpg',
+        img: '/img/bukatini.jpg',
         categ_id: 3,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -236,7 +236,7 @@ module.exports = {
       {
         name: 'Кампанелле',
         price: '650',
-        img: '../../public/img/pasta-kampanelle.jpg',
+        img: '/img/pasta-kampanelle.jpg',
         categ_id: 3,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -244,7 +244,7 @@ module.exports = {
       {
         name: 'Каннеллони',
         price: '850',
-        img: '../../public/img/kannelloni.jpg',
+        img: '/img/kannelloni.jpg',
         categ_id: 3,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -252,7 +252,7 @@ module.exports = {
       {
         name: 'Казаречче',
         price: '900',
-        img: '../../public/img/kazareche.jpg',
+        img: '/img/kazareche.jpg',
         categ_id: 3,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -260,7 +260,7 @@ module.exports = {
       {
         name: 'Каватаппи',
         price: '700',
-        img: '../../public/img/kavatappi.jpeg',
+        img: '/img/kavatappi.jpeg',
         categ_id: 3,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -268,7 +268,7 @@ module.exports = {
       {
         name: 'Лингвинни',
         price: '850',
-        img: '../../public/img/lingvinni.jpg',
+        img: '/img/lingvinni.jpg',
         categ_id: 3,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -276,7 +276,7 @@ module.exports = {
       {
         name: 'Стейк из свинины',
         price: '2300',
-        img: '../../public/img/stejk-iz-govyadinyi.jpg',
+        img: '/img/stejk-iz-govyadinyi.jpg',
         categ_id: 4,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -284,7 +284,7 @@ module.exports = {
       {
         name: 'Рыба на мангале',
         price: '2700',
-        img: '../../public/img/riba.jpg',
+        img: '/img/riba.jpg',
         categ_id: 4,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -292,7 +292,7 @@ module.exports = {
       {
         name: 'Жаркое',
         price: '1300',
-        img: '../../public/img/zharkoe.jpg',
+        img: '/img/zharkoe.jpg',
         categ_id: 4,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -300,7 +300,7 @@ module.exports = {
       {
         name: 'Шашлык Баранина',
         price: '2800',
-        img: '../../public/img/ayanes_shashliki.jpg',
+        img: '/img/ayanes_shashliki.jpg',
         categ_id: 4,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -308,7 +308,7 @@ module.exports = {
       {
         name: 'Осетинские Пироги',
         price: '3000',
-        img: '../../public/img/osetinskie-pirogi.png',
+        img: '/img/osetinskie-pirogi.png',
         categ_id: 4,
         createdAt: new Date(),
         updatedAt: new Date(),

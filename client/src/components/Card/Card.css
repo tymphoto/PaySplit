@@ -1,0 +1,12 @@
+.card {
+  border-radius: 15px;
+  height: 320px;
+  width: 217px;
+  
+}
+
+.card-body{
+  color:black;
+  background-color:rgba(23, 33, 39, 0.247);
+}
+

@@ -300,7 +300,7 @@ module.exports = {
       {
         name: 'Шашлык Баранина',
         price: '2800',
-        img: '/img/ayanes_shashliki.jpg',
+        img: '/img/shaslik.jpg',
         categ_id: 4,
         createdAt: new Date(),
         updatedAt: new Date(),

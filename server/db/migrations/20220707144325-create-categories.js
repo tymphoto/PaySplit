@@ -1,6 +1,6 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Products', {
+    await queryInterface.createTable('Categories', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -9,23 +9,6 @@ module.exports = {
       },
       name: {
         type: Sequelize.STRING,
-        allowNull: false,
-      },
-      price: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      img: {
-        type: Sequelize.TEXT,
-        allowNull: false,
-      },
-      categ_id: {
-        type: Sequelize.INTEGER,
-        references: {
-          model: 'Categories',
-          key: 'id',
-        },
-        onDelete: 'CASCADE',
       },
       createdAt: {
         allowNull: false,
@@ -38,6 +21,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Products');
+    await queryInterface.dropTable('Categories');
   },
 };

@@ -18,12 +18,11 @@ function MenuPage() {
 
   useEffect(() => {
     dispatch(getMenuThunk());
-  }, [sortedMenu]);
+  }, []);
 
   return (
     <div className="prod">
       <NewProduct />
-
       {/* <MyButton func={}>Добавить блюдо</MyButton> */}
       <Form.Control className="inputSearch mt-3 mb-2" type="text" placeholder="Найти товар" value={search} onChange={(e) => setSearch(e.target.value)} />
       <div>

@@ -12,23 +12,23 @@ export const getMenuThunk = () => async (dispatch) => {
 
 export const createProdThunk = (body) => async (dispatch) => {
   console.log(body, '===========');
-  const response = await fetch(
-    'http://localhost:3003/prodCreate',
-    {
-      method: 'post',
-      headers: {
-        'Content-type': 'application/json',
-      },
-      body: JSON.stringify({ body }),
-    },
-  );
-  {
-    try {
-      if (response.ok) {
-        const result = await response.json();
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  }
+  // const response = await fetch(
+  //   'http://localhost:3003/prodCreate',
+  //   {
+  //     method: 'post',
+  //     headers: {
+  //       'Content-type': 'application/json',
+  //     },
+  //     body: JSON.stringify(body),
+  //   },
+  // );
+  // {
+  //   try {
+  //     if (response.ok) {
+  //       const result = await response.json();
+  //     }
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }
 };

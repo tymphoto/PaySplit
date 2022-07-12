@@ -18,7 +18,7 @@ function MenuPage() {
 
   useEffect(() => {
     dispatch(getMenuThunk());
-  }, [sortedMenu]);
+  }, []);
 
   return (
     <div className="prod">

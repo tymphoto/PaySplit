@@ -1,3 +1,4 @@
+import './NewProduct.css';
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-expressions */
 /* eslint-disable max-len */
@@ -30,11 +31,11 @@ function NewProduct() {
   return (
     <Form onSubmit={handleSubmit}>
       <Form.Group className="mt-3 mb-3" controlId="formBasicName">
-        <Form.Label>Name</Form.Label>
+        <Form.Label />
         <Form.Control type="text" value={form.name || ''} name="name" onChange={handleChange} placeholder="name" />
-        <Form.Label>Price</Form.Label>
+        <Form.Label />
         <Form.Control type="text" value={form.price || ''} name="price" onChange={handleChange} placeholder="price" />
-        <Form.Label>Image</Form.Label>
+        <Form.Label />
         <Form.Control type="text" value={form.img || ''} name="img" onChange={handleChange} placeholder="img.url" />
         <Button onClick={handleSubmit}> ok</Button>
       </Form.Group>
@@ -43,3 +44,5 @@ function NewProduct() {
 }
 
 export default NewProduct;
+
+// https://hotwalls.ru/thumbnails/lg/temnyy_fon_v_melkuyu_tochku.jpg

@@ -6,6 +6,7 @@ import { getMenuThunk } from '../../redux/actions/MenuAction';
 import AddToCheck from '../MyButton/AddToCheck';
 import CounterButton from '../MyButton/CounterButton';
 import Products from '../Products/Products';
+import './Card.css';
 
 function Card({ el, ...props }) {
   const dispatch = useDispatch();
@@ -18,8 +19,10 @@ function Card({ el, ...props }) {
   return (
     <div>
       <Products el={el} />
+      <AddToCheck func={putToCheck(el, counter)} counter={counter}>
+        Добавить в чек
+      </AddToCheck>
       <CounterButton counter={counter} setCounter={setCounter} />
-      <AddToCheck func={putToCheck(el, counter)} counter={counter}>Добавить в чек</AddToCheck>
     </div>
   );
 }

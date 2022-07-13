@@ -1,3 +1,4 @@
+import './NewProduct.css';
 /* eslint-disable no-undef */
 import React, {
   useCallback, useRef, useState, useEffect,
@@ -99,6 +100,7 @@ function NewProduct() {
           value={inputs.myFile}
         />
         <Button type="submit"> ok</Button>
+
       </Form.Group>
     </Form>
   );

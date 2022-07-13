@@ -50,59 +50,61 @@ function NewProduct() {
   console.log(categoryId);
 
   return (
-    <Form onSubmit={handleSubmit}>
-      <Form.Group className="mt-3 mb-3" controlId="formBasicName">
-        <Form.Label>Name</Form.Label>
-        <Form.Control
-          value={inputs.name}
-          name="name"
-          onChange={handleInputs}
-          placeholder="name"
-          type="text"
-          htmlFor="nameinput"
-          id="nameinput"
-        />
-        <Form.Label>Price</Form.Label>
-        <Form.Control
-          value={inputs.price}
-          name="price"
-          onChange={handleInputs}
-          placeholder="price"
-          type="text"
-          htmlFor="priceinput"
-          id="priceinput"
-        />
+    <div className="container">
+      <Form onSubmit={handleSubmit}>
+        <Form.Group className="mt-3 mb-3" controlId="formBasicName">
+          <Form.Label>Name</Form.Label>
+          <Form.Control
+            value={inputs.name}
+            name="name"
+            onChange={handleInputs}
+            placeholder="name"
+            type="text"
+            htmlFor="nameinput"
+            id="nameinput"
+          />
+          <Form.Label>Price</Form.Label>
+          <Form.Control
+            value={inputs.price}
+            name="price"
+            onChange={handleInputs}
+            placeholder="price"
+            type="text"
+            htmlFor="priceinput"
+            id="priceinput"
+          />
 
-        <Form.Control
-          aria-label="Default select example"
-          as="select"
-          onChange={(e) => SetCatId(e.target.value)}
-        >
-          <option>Select Category</option>
-          {category && category.map((el) => (
-            <option
-              value={el.id}
+          <Form.Control
+            aria-label="Default select example"
+            as="select"
+            onChange={(e) => SetCatId(e.target.value)}
+          >
+            <option>Select Category</option>
+            {category && category.map((el) => (
+              <option
+                value={el.id}
+              >
+                {el.name}
+              </option>
+            ))}
+          </Form.Control>
 
-            >
-              {el.name}
-            </option>
-          ))}
-        </Form.Control>
+          <Form.Label>Image</Form.Label>
+          <Form.Control
+            type="file"
+            ref={myFile}
+            name="myFile"
+            placeholder="image"
+            id="fileInput"
+            htmlFor="fileInput"
+            value={inputs.myFile}
+          />
+          <Button type="submit"> ok</Button>
 
-        <Form.Label>Image</Form.Label>
-        <Form.Control
-          type="file"
-          ref={myFile}
-          name="myFile"
-          placeholder="image"
-          id="fileInput"
-          htmlFor="fileInput"
-          value={inputs.myFile}
-        />
-        <Button type="submit"> ok</Button>
+        </Form.Group>
+      </Form>
+    </div>
 
-      </Form.Group>
-    </Form>
   );
 }
 

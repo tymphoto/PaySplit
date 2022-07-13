@@ -8,6 +8,7 @@ const { Checks, Orders } = require('../db/models');
 
 router.post('/', async (req, res) => {
   try {
+    console.log(req.body, '+++++++++++++++++++++++');
     const userID = req.body.body.data.userId;
     const products = req.body.body.newCheck;
     const newCheck = await Checks.create({ user_id: userID });

@@ -7,14 +7,16 @@ export const getCategory = (data) => ({ type: GET_CATEGORY, payload: data });
 export const getNewProduct = (data) => ({ type: GET_NEW_PRODUCT, payload: data });
 
 export const getMenuThunk = (body) => async (dispatch) => {
-  console.log(body);
-  const response = await fetch(`http://localhost:3003/${body}`);
-  const result = await response.json();
-  dispatch(getMenu(result));
+  console.log(body, '===========');
+  if (body) {
+    const response = await fetch(`http://localhost:3003/category/${body}`);
+    const result = await response.json();
+    dispatch(getMenu(result));
+  }
 };
 
 export const getCategoryThunk = () => async (dispatch) => {
-  const response = await fetch('http://localhost:3003/');
+  const response = await fetch('http://localhost:3003/category');
   const result = await response.json();
   dispatch(getCategory(result));
 };

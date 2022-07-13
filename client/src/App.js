@@ -12,6 +12,8 @@ import NewCheck from './components/NewCheck/NewCheck';
 import QR from './components/QR/QR';
 import Bill from './components/Bill/Bill';
 import NewProduct from './components/AddNewProduct/NewProduct';
+import MenuPage from './components/MenuPage/MenuPage';
+import CategoryProducts from './components/CategoryPage/CategoryProducts';
 
 function App({ getName }) {
   return (
@@ -22,8 +24,23 @@ function App({ getName }) {
           <Route
             path="/"
             element={(
+              <AuthRoute />
+            )}
+          />
+
+          <Route
+            path="/category"
+            element={(
               <AuthRoute>
                 <Category />
+              </AuthRoute>
+            )}
+          />
+          <Route
+            path="/category/:id"
+            element={(
+              <AuthRoute>
+                <CategoryProducts />
               </AuthRoute>
             )}
           />

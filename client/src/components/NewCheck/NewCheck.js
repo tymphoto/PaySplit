@@ -16,6 +16,7 @@ function NewCheck() {
 
   const data = { userId };
   const create = () => createCheckThunk({ data, newCheck });
+  console.log(data, '>>>>>>>>>>>>', newCheck);
   const getSumOfCheck = () => {
     let sum = 0;
     newCheck.forEach((el) => sum += Number(el.data.price) * el.count);

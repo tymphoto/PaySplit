@@ -8,7 +8,6 @@ router.get('/', async (req, res) => {
     const products = await Categories.findAll();
     res.json(products);
   } catch (error) {
-    console.log(error);
   }
 });
 

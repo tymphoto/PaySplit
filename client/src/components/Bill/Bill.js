@@ -1,6 +1,3 @@
-/* eslint-disable no-trailing-spaces */
-/* eslint-disable react/jsx-no-bind */
-/* eslint-disable no-return-assign */
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Form, Button } from 'react-bootstrap';
@@ -17,7 +14,7 @@ function Bill() {
   const [sum, setSum] = useState(0);
 
   useEffect(() => {
-    dispatch(getBillThunk(1));
+    dispatch(getBillThunk(4));
     // getSumOfCheck();
   }, []);
 

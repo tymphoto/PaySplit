@@ -27,6 +27,9 @@ function NavbarBootstrap() {
               <Nav.Link as={Link} to="/">
                 Меню
               </Nav.Link>
+              <Nav.Link as={Link} to="/category">
+                Категории
+              </Nav.Link>
               <Nav.Link as={Link} to="/newProduct">
                 Новый продукт
               </Nav.Link>

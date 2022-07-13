@@ -5,7 +5,6 @@ import { getMenuThunk } from '../../redux/actions/MenuAction';
 import Products from '../Products/Products';
 import MyButton from '../MyButton/MyButton';
 import { putToCheck } from '../../redux/actions/CheckAction';
-import './Menu.css';
 import CounterButton from '../MyButton/CounterButton';
 import MyCard from '../Card/MyCard';
 import NewProduct from '../AddNewProduct/NewProduct';

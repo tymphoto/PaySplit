@@ -1,22 +1,24 @@
+/* eslint-disable import/order */
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Card from 'react-bootstrap/Card';
-import { Form, Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import { getCategoryThunk, getMenuThunk } from '../../redux/actions/MenuAction';
 import './Menu.css';
-import MyCard from '../Card/MyCard';
 
 function Category() {
   const { category } = useSelector((s) => s.menu);
   const dispatch = useDispatch();
-  const { products } = useSelector((s) => s.menu);
+  const navigate = useNavigate();
   const [search, setSearch] = useState('');
 
   // const sortedMenu = [...products].filter((el) => el.name.toLowerCase()
   //   .includes(search.toLowerCase()));
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(getMenuThunk(e.target.id));
+    const { id } = e.target;
+    dispatch(getMenuThunk(id));
+    navigate(id);
   };
 
   useEffect(() => {
@@ -37,17 +39,6 @@ function Category() {
           </div>
         </Card>
       ))}
-      <div>
-        <ol className="menu mt-2">
-          {products && products.map((el) => (
-            <li>
-              <div>
-                <MyCard el={el} />
-              </div>
-            </li>
-          ))}
-        </ol>
-      </div>
 
     </div>
   );

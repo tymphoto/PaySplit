@@ -16,6 +16,7 @@ function NewProduct() {
   const [categoryId, SetCatId] = useState('');
   const dispatch = useDispatch();
   const { category } = useSelector((s) => s.menu);
+  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(getCategoryThunk());
@@ -29,38 +30,47 @@ function NewProduct() {
     formData.append('price', inputs.price);
     formData.append('category', categoryId);
     formData.append('myFile', myFile.current.files[0]);
-
+    console.log(formData);
     fetch('http://localhost:3003/prodCreate', { method: 'Post', body: formData })
       .then((response) => response.json())
       .then((result) => setPosts((prev) => ([...prev, result])))
       .finally(() => setInputs({}));
     window.location = 'http://localhost:3000/newProduct';
   };
+  // const ChangeId = (e) => {
+  //   SetCatId(e.target.id);
+  //   console.log(catId);
+  // };
 
   const handleInputs = useCallback((e) => {
     setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   }, []);
 
+  // const handleCategory = (e) => {
+  // };
+
+  console.log(categoryId);
+
   return (
     <div className="container">
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mt-3 mb-3" controlId="formBasicName">
-          <Form.Label>Name</Form.Label>
+          <Form.Label>Название продукта</Form.Label>
           <Form.Control
             value={inputs.name}
             name="name"
             onChange={handleInputs}
-            placeholder="name"
+            placeholder="Название продукта"
             type="text"
             htmlFor="nameinput"
             id="nameinput"
           />
-          <Form.Label>Price</Form.Label>
+          <Form.Label>Цена</Form.Label>
           <Form.Control
             value={inputs.price}
             name="price"
             onChange={handleInputs}
-            placeholder="price"
+            placeholder="Цена"
             type="text"
             htmlFor="priceinput"
             id="priceinput"
@@ -70,8 +80,9 @@ function NewProduct() {
             aria-label="Default select example"
             as="select"
             onChange={(e) => SetCatId(e.target.value)}
+            className="mt-4"
           >
-            <option>Select Category</option>
+            <option>Выберите категорию</option>
             {category && category.map((el) => (
               <option
                 value={el.id}
@@ -81,7 +92,7 @@ function NewProduct() {
             ))}
           </Form.Control>
 
-          <Form.Label>Image</Form.Label>
+          <Form.Label>Фото</Form.Label>
           <Form.Control
             type="file"
             ref={myFile}
@@ -91,7 +102,7 @@ function NewProduct() {
             htmlFor="fileInput"
             value={inputs.myFile}
           />
-          <Button type="submit">OK</Button>
+          <Button className="mt-4" type="submit"> ok</Button>
 
         </Form.Group>
       </Form>

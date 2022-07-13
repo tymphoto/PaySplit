@@ -13,7 +13,7 @@ function Products({ el }) {
     <Card>
       <Card.Img className="im" variant="top" src={el.img} alt="image" />
       <Card.Body>
-        <Card.Title>{el.name}</Card.Title>
+        <p className="elName">{el.name}</p>
         <Card.Text>
           {el.price}
           {' '}

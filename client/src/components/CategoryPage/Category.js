@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable import/order */
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -29,15 +30,11 @@ function Category() {
   return (
     <div className="prod">
       {category && category.map((el) => (
-        <Card key={el.id}>
+        <Card className="mt-3 mb-2" onClick={handleSubmit} key={el.id}>
           {' '}
-          <div
-            className="mt-3 mb-2"
-            key={el.id}
-            onClick={handleSubmit}
-          >
-            <h3 id={el.id}>{el.name}</h3>
-          </div>
+          <img src={el.img} />
+          <h3 id={el.id}>{el.name}</h3>
+
         </Card>
       ))}
     </div>

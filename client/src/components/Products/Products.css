@@ -1,6 +1,11 @@
 .im {
+
   max-width: 200px;
   max-height: 200px;
   min-height: 200px;
   min-width: 215px;
+}
+
+.elName {
+  font-size: 10px;
 }

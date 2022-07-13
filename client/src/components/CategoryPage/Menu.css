@@ -2,17 +2,41 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around; 
+  margin-right:250px ;
+  margin-left: 250px;
 }
 
 li {
   list-style-type: none; /* Убираем маркеры */
 }
 
-.prod {
+.flex {
   display: flex;
-  justify-content: space-evenly;
-  display: inline-block;
-  width: 55vw;
+  flex-direction: column;
+  align-items: center;
 }
 
+.flex .prod {
+  display: flex;
+  justify-content: center;
+  width: 45vw;
+  align-items: stretch;
+  margin-top: 50px;
+  align-content: stretch;
+  flex-wrap: wrap;
+  
+}
 
+.prod .card {
+  width: 200px;
+  min-width: 200px;
+  margin-left: 3rem;
+}
+
+.prod .card img {
+  width: 100%;
+}
+
+.card h3 {
+  font-size: 125%;
+}

@@ -8,7 +8,7 @@ function NavbarBootstrap() {
   const { user } = useSelector((state) => state);
   const dispatch = useDispatch();
 
-  const renderLogout = () => <button className="btn btn-danger" type="button" onClick={() => dispatch(userLogoutThunk())} variant="secondary">Logout</button>;
+  const renderLogout = () => <button className="btn btn-danger" type="button" onClick={() => dispatch(userLogoutThunk())} variant="secondary">Выход</button>;
 
   const renderLogin = () => <Nav.Link as={Link} to="/auth">Login</Nav.Link>;
 

@@ -35,6 +35,7 @@ function NewProduct() {
       .then((response) => response.json())
       .then((result) => setPosts((prev) => ([...prev, result])))
       .finally(() => setInputs({}));
+    window.location = 'http://localhost:3000/newProduct';
   };
   // const ChangeId = (e) => {
   //   SetCatId(e.target.id);
@@ -47,6 +48,7 @@ function NewProduct() {
 
   // const handleCategory = (e) => {
   // };
+
   console.log(categoryId);
 
   return (

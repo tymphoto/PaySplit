@@ -11,9 +11,7 @@ export const plusElementCount = (data) => (
 export const minusElementCount = (data) => (
   { type: MINUS_ELEMENT_TO_CHECK, payload: data }
 );
-
 export const createCheckThunk = (body) => async (dispatch) => {
-  console.log(body);
   const response = await fetch(
     'http://localhost:3003/checkCreate',
     {
@@ -26,9 +24,9 @@ export const createCheckThunk = (body) => async (dispatch) => {
   );
   {
     try {
-      const result = await response.json();
-      // dispatch(getNewCheck(result));
-      console.log(result);
+      if (response.ok) {
+        const result = await response.json();
+      }
     } catch (error) {
       console.log(error);
     }

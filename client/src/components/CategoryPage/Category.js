@@ -11,11 +11,14 @@ function Category() {
   const dispatch = useDispatch();
   const { products } = useSelector((s) => s.menu);
   const [search, setSearch] = useState('');
+  console.log(category);
+  console.log(products);
 
   // const sortedMenu = [...products].filter((el) => el.name.toLowerCase()
   //   .includes(search.toLowerCase()));
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(e.target.id);
     dispatch(getMenuThunk(e.target.id));
   };
 
@@ -26,7 +29,7 @@ function Category() {
   return (
     <div className="prod">
       {category && category.map((el) => (
-        <Card>
+        <Card key={el.id}>
           {' '}
           <div
             className="mt-3 mb-2"
@@ -40,7 +43,7 @@ function Category() {
       <div>
         <ol className="menu mt-2">
           {products && products.map((el) => (
-            <li>
+            <li key={el.id}>
               <div>
                 <MyCard el={el} />
               </div>

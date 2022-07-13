@@ -12,6 +12,7 @@ function Category() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [search, setSearch] = useState('');
+  console.log(category);
 
   // const sortedMenu = [...products].filter((el) => el.name.toLowerCase()
   //   .includes(search.toLowerCase()));
@@ -29,7 +30,7 @@ function Category() {
   return (
     <div className="prod">
       {category && category.map((el) => (
-        <Card>
+        <Card key={el.id}>
           {' '}
           <div
             className="mt-3 mb-2"
@@ -41,7 +42,6 @@ function Category() {
           </div>
         </Card>
       ))}
-
     </div>
   );
 }

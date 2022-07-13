@@ -27,7 +27,7 @@ function NewCheck() {
     <div>
       <ol className="menu">
         {newCheck.map((el) => (
-          <li>
+          <li key={el.data.id}>
             <CardForNewCheck el={el} />
           </li>
         ))}

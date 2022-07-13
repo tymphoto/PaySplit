@@ -14,6 +14,7 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   try {
     const { id } = req.params;
+    console.log('=======================>>>>>.', req.params)
     const products = await Products.findAll(
       { where: { categ_id: id } },
     );

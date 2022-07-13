@@ -48,7 +48,6 @@ function Category() {
           ))}
         </ol>
       </div>
-
     </div>
   );
 }

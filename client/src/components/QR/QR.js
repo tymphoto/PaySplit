@@ -6,7 +6,6 @@ function QR() {
   const { newCheck } = useSelector((state) => state);
   const { id } = newCheck;
   const location = `${process.env.REACT_APP_CLIENT_PATH}/bill/${id}`;
-  console.log(location);
   return (
     <div>
       <QRCode value={location} />

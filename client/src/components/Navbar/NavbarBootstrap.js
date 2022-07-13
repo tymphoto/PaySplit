@@ -12,8 +12,6 @@ function NavbarBootstrap() {
 
   const renderLogin = () => <Nav.Link as={Link} to="/auth">Login</Nav.Link>;
 
-  // console.log(user);
-
   return (
     <div>
       <Navbar bg="light" expand="lg">

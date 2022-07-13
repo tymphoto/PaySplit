@@ -1,0 +1,7 @@
+.newCheckList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; 
+  margin-right:250px ;
+  margin-left: 250px;
+}

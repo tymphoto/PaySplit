@@ -5,12 +5,16 @@ import { Form, Button } from 'react-bootstrap';
 import { getCategoryThunk, getMenuThunk } from '../../redux/actions/MenuAction';
 import './Menu.css';
 import NewProduct from '../AddNewProduct/NewProduct';
+import CounterButton from '../MyButton/CounterButton';
+import AddToCheck from '../MyButton/AddToCheck';
+import { putToCheck } from '../../redux/actions/CheckAction';
 
 function Category() {
   const { category } = useSelector((s) => s.menu);
   const dispatch = useDispatch();
   const { products } = useSelector((s) => s.menu);
   const [search, setSearch] = useState('');
+  const [counter, setCounter] = useState(0);
   // const sortedMenu = [...products].filter((el) => el.name.toLowerCase()
   //   .includes(search.toLowerCase()));
   const handleSubmit = (e) => {
@@ -57,6 +61,10 @@ function Category() {
                     {' '}
                     ₽
                   </Card.Text>
+                  <AddToCheck func={putToCheck(el, counter)} counter={counter}>
+                    Добавить в чек
+                  </AddToCheck>
+                  <CounterButton counter={counter} setCounter={setCounter} />
                 </Card.Body>
               </Card>
               {' '}

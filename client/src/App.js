@@ -12,7 +12,7 @@ import NewCheck from './components/NewCheck/NewCheck';
 import QR from './components/QR/QR';
 import Bill from './components/Bill/Bill';
 
-function App() {
+function App({ getName }) {
   return (
     <div className="App">
       <NavbarBootstrap />
@@ -46,7 +46,7 @@ function App() {
           <Route
             path="/bill"
             element={(
-              <Bill />
+              <Bill getName={getName} />
             )}
           />
 

@@ -1,3 +1,4 @@
+/* eslint-disable no-trailing-spaces */
 /* eslint-disable react/jsx-no-bind */
 /* eslint-disable no-return-assign */
 import React, { useState } from 'react';
@@ -9,6 +10,9 @@ function Bill() {
   const { newCheck } = useSelector((state) => state);
   const [customers, setCustomers] = useState([]);
   const [form, setForm] = useState({});
+  const [gname, getName] = useState({});
+
+  // console.log(getName);
 
   function handleChange(e) {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -32,8 +36,15 @@ function Bill() {
     return sum;
   };
 
+  const getAllName = (e) => {
+    getName(e.target.value);
+    // customers;
+  };
+
   console.log('form ====>>>', form);
   console.log('customers =>>>>', customers);
+  // console.log(handleChange);
+  // console.log('check', newCheck);
 
   return (
     <div>
@@ -65,14 +76,12 @@ function Bill() {
             </div>
             <div className="mt-1 mb-1">
               {' '}
-              Итого:
+              Должен:
               {' '}
               {el.data.price * el.count}
             </div>
-
             <select
-              value={customers}
-              onChange={getSumOfCheck()}
+              onChange={getAllName}
             >
               <option disabled value="">Кто это ел?</option>
               {customers.map((customer) => (
@@ -81,11 +90,10 @@ function Bill() {
                 </option>
               ))}
             </select>
-
+            <input className="inputSearch mt-3 mb-2" type="text" placeholder="Введите количество" value={form.name || ''} />
           </li>
         ))}
       </ol>
-
       <div className="mb-5">
         Итого:
         {getSumOfCheck()}

@@ -18,7 +18,7 @@ function CategoryProducts() {
       <div>
         <ol className="menu mt-2">
           {products && products.map((el) => (
-            <li>
+            <li key={el.id}>
               <div>
                 <MyCard el={el} />
               </div>

@@ -11,7 +11,7 @@ function CounterButtonForBill({
       </div>
       <div>{counter}</div>
       <div>
-        <button type="button" onClick={() => { addToSum(el.price); setCounter(counter + 1); }} className="btn btn-outline-primary">+</button>
+        <button type="button" disabled={counter === el.count} onClick={() => { addToSum(el.price); setCounter(counter + 1); }} className="btn btn-outline-primary">+</button>
       </div>
     </div>
   );

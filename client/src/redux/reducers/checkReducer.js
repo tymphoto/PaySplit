@@ -2,6 +2,7 @@
 import {
   PUT_TO_CHECK, DELETE_FROM_CHECK, PLUS_ELEMENT_TO_CHECK, MINUS_ELEMENT_TO_CHECK,
   CREATE_NEW_CHECK,
+  GET_CHECK_ID,
 } from '../constants/constants';
 
 const initialState = [];
@@ -18,6 +19,9 @@ const CheckReducer = (state = initialState, action) => {
 
     case CREATE_NEW_CHECK:
       return [{ newCheck: payload }];
+
+    case GET_CHECK_ID:
+      return payload;
 
     case PLUS_ELEMENT_TO_CHECK:
       return state.map((el) => {

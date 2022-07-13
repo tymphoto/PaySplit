@@ -1,13 +1,11 @@
 import React from 'react';
 import QRCode from 'react-qr-code';
+import { useSelector } from 'react-redux';
 
 function QR() {
-  const createQR = (url) => (
-    <div>
-      <QRCode value={url} />
-    </div>
-  );
-  const location = 'http://localhost:3000/bill';
+  const { newCheck } = useSelector((state) => state);
+  const { id } = newCheck;
+  const location = `${process.env.REACT_APP_CLIENT_PATH}/bill/${id}`;
   console.log(location);
   return (
     <div>

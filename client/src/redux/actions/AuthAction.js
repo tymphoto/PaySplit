@@ -8,7 +8,7 @@ export const userLogout = () => ({ type: LOGOUT_USER, payload: null });
 
 export const userAuthThunk = (loginToggle, body) => async (dispatch) => {
   const response = await fetch(
-    loginToggle ? '/login' : '/register',
+    loginToggle ? `${process.env.REACT_APP_SERVER_PATH}/login` : `${process.env.REACT_APP_SERVER_PATH}/register`,
     {
       method: 'post',
       headers: {

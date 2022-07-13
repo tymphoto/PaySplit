@@ -71,19 +71,17 @@ function App({ getName }) {
           />
 
           <Route
-            path="/bill"
-            element={(
-              <Bill getName={getName} />
-            )}
-          />
-
-          <Route
             path="/auth"
             element={(
               <AuthRoute>
                 <UserForm />
               </AuthRoute>
             )}
+          />
+
+          <Route
+            path="/bill/:id"
+            element={<Bill />}
           />
 
           <Route

@@ -6,7 +6,7 @@ import Products from '../Products/Products';
 
 function CardForNewCheck({ el }) {
   // const [counter, setCounter] = useState(el.count);
-  console.log(el, '====================');
+  // console.log(el, '====================');
   return (
     <div>
       <Products el={el.data} />

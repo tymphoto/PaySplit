@@ -19,6 +19,14 @@ module.exports = {
         type: Sequelize.TEXT,
         allowNull: false,
       },
+      categ_id: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Categories',
+          key: 'id',
+        },
+        onDelete: 'CASCADE',
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

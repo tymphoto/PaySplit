@@ -1,0 +1,20 @@
+{
+  "name": "paysplit",
+  "version": "1.0.0",
+  "description": "Веб-приложение для разделения оплаты чека из ресторана",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tymphoto/PaySplit.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tymphoto/PaySplit/issues"
+  },
+  "homepage": "https://github.com/tymphoto/PaySplit#readme"
+}

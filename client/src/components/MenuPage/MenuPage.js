@@ -7,7 +7,7 @@ import MyButton from '../MyButton/MyButton';
 import { putToCheck } from '../../redux/actions/CheckAction';
 import './Menu.css';
 import CounterButton from '../MyButton/CounterButton';
-import Card from '../Card/Card';
+import MyCard from '../Card/MyCard';
 import NewProduct from '../AddNewProduct/NewProduct';
 
 function MenuPage() {
@@ -29,7 +29,7 @@ function MenuPage() {
         <ol className="menu mt-2">
           {sortedMenu.map((el) => (
             <li>
-              <Card el={el} />
+              <MyCard el={el} />
             </li>
           ))}
         </ol>

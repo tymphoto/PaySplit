@@ -1,21 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Form, Button } from 'react-bootstrap';
-import Products from '../Products/Products';
-import CounterButton from '../MyButton/CounterButton';
-import CardForNewCheck from '../Card/CardForNewCheck';
+import { useParams } from 'react-router-dom';
 import CardForBill from '../Card/CardForBill';
 import { getBillThunk } from '../../redux/actions/BillAction';
 
 function Bill() {
   const dispatch = useDispatch();
   const { bill } = useSelector((state) => state);
+  const { id } = useParams();
+  console.log(id);
 
   const [sum, setSum] = useState(0);
 
   useEffect(() => {
-    dispatch(getBillThunk(4));
-    // getSumOfCheck();
+    dispatch(getBillThunk(id));
+    console.log('Some body is here');
   }, []);
 
   const addToSum = (price) => {

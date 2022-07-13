@@ -22,7 +22,7 @@ router.post('/', async (req, res) => {
         counter: count,
       });
     }
-    res.json(newCheck);
+    res.json({ id: newCheck.id });
   } catch (error) {
     console.log(error);
   }

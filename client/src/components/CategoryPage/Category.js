@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Card from 'react-bootstrap/Card';
-import { Form, Button } from 'react-bootstrap';
 import { getCategoryThunk, getMenuThunk } from '../../redux/actions/MenuAction';
 import './Menu.css';
 import MyCard from '../Card/MyCard';
@@ -31,7 +30,7 @@ function Category() {
           <div
             className="mt-3 mb-2"
             key={el.id}
-            onClick={handleSubmit}
+            onClick={() => handleSubmit()}
           >
             <h3 id={el.id}>{el.name}</h3>
           </div>

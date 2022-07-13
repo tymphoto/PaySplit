@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable import/order */
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -35,6 +36,7 @@ function Category() {
             key={el.id}
             onClick={handleSubmit}
           >
+            <img src={el.img} style={{ width: '200px' }} />
             <h3 id={el.id}>{el.name}</h3>
           </div>
         </Card>

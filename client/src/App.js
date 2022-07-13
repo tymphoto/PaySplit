@@ -11,6 +11,7 @@ import Footer from './components/Footer/Footer';
 import NewCheck from './components/NewCheck/NewCheck';
 import QR from './components/QR/QR';
 import Bill from './components/Bill/Bill';
+import NewProduct from './components/AddNewProduct/NewProduct';
 
 function App({ getName }) {
   return (
@@ -23,6 +24,15 @@ function App({ getName }) {
             element={(
               <AuthRoute>
                 <Category />
+              </AuthRoute>
+            )}
+          />
+
+          <Route
+            path="/newProduct"
+            element={(
+              <AuthRoute>
+                <NewProduct />
               </AuthRoute>
             )}
           />

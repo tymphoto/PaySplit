@@ -16,7 +16,6 @@ function NewProduct() {
   const [categoryId, SetCatId] = useState('');
   const dispatch = useDispatch();
   const { category } = useSelector((s) => s.menu);
-  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(getCategoryThunk());
@@ -30,24 +29,17 @@ function NewProduct() {
     formData.append('price', inputs.price);
     formData.append('category', categoryId);
     formData.append('myFile', myFile.current.files[0]);
-    console.log(formData);
+
     fetch('http://localhost:3003/prodCreate', { method: 'Post', body: formData })
       .then((response) => response.json())
       .then((result) => setPosts((prev) => ([...prev, result])))
       .finally(() => setInputs({}));
+    window.location = 'http://localhost:3000/newProduct';
   };
-  // const ChangeId = (e) => {
-  //   SetCatId(e.target.id);
-  //   console.log(catId);
-  // };
 
   const handleInputs = useCallback((e) => {
     setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   }, []);
-
-  // const handleCategory = (e) => {
-  // };
-  console.log(categoryId);
 
   return (
     <div className="container">
@@ -99,7 +91,7 @@ function NewProduct() {
             htmlFor="fileInput"
             value={inputs.myFile}
           />
-          <Button type="submit"> ok</Button>
+          <Button type="submit">OK</Button>
 
         </Form.Group>
       </Form>

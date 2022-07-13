@@ -9,7 +9,7 @@ router.get('/:id', async (req, res) => {
     const order = await Orders.findOne({
       where: { check_id: id },
       include: {
-        model: Checks,
+        model: Products,
       },
     });
     console.log(JSON.parse(JSON.stringify(order), '============================='));

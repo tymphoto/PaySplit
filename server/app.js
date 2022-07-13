@@ -94,7 +94,7 @@ app.post('/login', async (req, res) => {
   }
 });
 
-app.use('/', menuRouter);
+app.use('/category', menuRouter);
 app.use('/order', orderRouter);
 app.use('/checkCreate', checkRouter);
 app.use('/prodCreate', prodCreateRouter);

@@ -1,5 +1,4 @@
 import './NewProduct.css';
-/* eslint-disable no-undef */
 import React, {
   useCallback, useRef, useState, useEffect,
 } from 'react';
@@ -31,30 +30,21 @@ function NewProduct() {
     formData.append('category', categoryId);
     formData.append('myFile', myFile.current.files[0]);
     console.log(formData);
-    fetch('http://localhost:3003/prodCreate', { method: 'Post', body: formData })
+    fetch(`${process.env.REACT_APP_SERVER_PATH}/prodCreate`, { method: 'Post', body: formData })
       .then((response) => response.json())
       .then((result) => setPosts((prev) => ([...prev, result])))
       .finally(() => setInputs({}));
-    window.location = 'http://localhost:3000/newProduct';
+    window.location = `${process.env.REACT_APP_CLIENT_PATH}/newProduct`;
   };
-  // const ChangeId = (e) => {
-  //   SetCatId(e.target.id);
-  //   console.log(catId);
-  // };
 
   const handleInputs = useCallback((e) => {
     setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   }, []);
 
-  // const handleCategory = (e) => {
-  // };
-
-  console.log(categoryId);
-
   return (
     <div className="container">
       <Form onSubmit={handleSubmit}>
-        <Form.Group className="mt-3 mb-3" controlId="formBasicName">
+        <Form.Group className="mt-3 mb-3">
           <Form.Label>Название продукта</Form.Label>
           <Form.Control
             value={inputs.name}
@@ -86,6 +76,7 @@ function NewProduct() {
             {category && category.map((el) => (
               <option
                 value={el.id}
+                key={el.id}
               >
                 {el.name}
               </option>

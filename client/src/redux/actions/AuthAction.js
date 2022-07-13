@@ -17,18 +17,21 @@ export const userAuthThunk = (loginToggle, body) => async (dispatch) => {
       body: JSON.stringify(body),
     },
   );
-  const result = await response.json();
-  // console.log(result);
-  dispatch(createUser(result));
+  // console.log(response);
+  if (response.ok) {
+    // console.log(response);
+    const result = await response.json();
+    dispatch(createUser(result));
+  }
 };
 
 export const userCheckAuthThunk = () => async (dispatch) => {
-  const response = await fetch('/auth');
+  const response = await fetch(`${process.env.REACT_APP_SERVER_PATH}/auth`);
   const result = await response.json();
   dispatch(checkUser(result));
 };
 
 export const userLogoutThunk = () => async (dispatch) => {
-  await fetch('/logout');
+  await fetch(`${process.env.REACT_APP_SERVER_PATH}/logout`);
   dispatch(userLogout());
 };

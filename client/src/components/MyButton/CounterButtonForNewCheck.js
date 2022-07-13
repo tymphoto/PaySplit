@@ -8,7 +8,7 @@ function CounterButtonForNewCheck({ setCounter, counter, el }) {
   return (
     <div className="buttons mt-3 mb-1 count">
       <div>
-        <button type="button" onClick={() => dispatch(minusElementCount(el))} className="btn btn-outline-primary">-</button>
+        <button type="button" disabled={!counter} onClick={() => dispatch(minusElementCount(el))} className="btn btn-outline-primary">-</button>
       </div>
       <div>{counter}</div>
       <div>

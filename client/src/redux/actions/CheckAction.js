@@ -22,6 +22,7 @@ export const createCheckThunk = (body) => async (dispatch) => {
       },
       body: JSON.stringify({ body }),
     },
+    { credentials: 'include' },
   );
   {
     try {

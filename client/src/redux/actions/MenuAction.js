@@ -9,14 +9,14 @@ export const getNewProduct = (data) => ({ type: GET_NEW_PRODUCT, payload: data }
 export const getMenuThunk = (body) => async (dispatch) => {
   console.log(body, '===========');
   if (body) {
-    const response = await fetch(`${process.env.REACT_APP_SERVER_PATH}/category/${body}`);
+    const response = await fetch(`${process.env.REACT_APP_SERVER_PATH}/category/${body}`, { credentials: 'include' });
     const result = await response.json();
     dispatch(getMenu(result));
   }
 };
 
 export const getCategoryThunk = () => async (dispatch) => {
-  const response = await fetch(`${process.env.REACT_APP_SERVER_PATH}/category`);
+  const response = await fetch(`${process.env.REACT_APP_SERVER_PATH}/category`, { credentials: 'include' });
   const result = await response.json();
   dispatch(getCategory(result));
 };

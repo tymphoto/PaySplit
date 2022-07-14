@@ -8,14 +8,16 @@ export const userLogout = () => ({ type: LOGOUT_USER, payload: null });
 
 export const userAuthThunk = (loginToggle, body) => async (dispatch) => {
   const response = await fetch(
-    loginToggle ? `${process.env.REACT_APP_SERVER_PATH}/login` : `${process.env.REACT_APP_SERVER_PATH}/register`,
+    loginToggle ? 'http://localhost:3003/login' : 'http://localhost:3003/register',
     {
+      credentials: 'include',
       method: 'post',
       headers: {
         'Content-type': 'application/json',
       },
       body: JSON.stringify(body),
     },
+
   );
   // console.log(response);
   if (response.ok) {
@@ -26,12 +28,12 @@ export const userAuthThunk = (loginToggle, body) => async (dispatch) => {
 };
 
 export const userCheckAuthThunk = () => async (dispatch) => {
-  const response = await fetch(`${process.env.REACT_APP_SERVER_PATH}/auth`);
+  const response = await fetch('http://localhost:3003/auth', { credentials: 'include' });
   const result = await response.json();
   dispatch(checkUser(result));
 };
 
 export const userLogoutThunk = () => async (dispatch) => {
-  await fetch(`${process.env.REACT_APP_SERVER_PATH}/logout`);
+  await fetch('http://localhost:3003/logout', { credentials: 'include' });
   dispatch(userLogout());
 };

@@ -2,7 +2,6 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
-const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const FileStore = require('session-file-store')(session);
 const checkSession = require('./middlewares/checkSession');
@@ -14,7 +13,12 @@ const prodCreateRouter = require('./routers/prodCreate');
 
 const app = express();
 
-app.use(cors({ credentials: true }));
+app.use(cors({
+  credentials: true,
+  origin: true,
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  preflightContinue: false,
+}));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(path.join(process.env.PWD, 'public')));
@@ -28,12 +32,11 @@ const sessionConfig = {
     httpOnly: true,
     maxAge: 1000 * 60 * 60 * 24,
   },
-  resave: true,
+  resave: false,
   saveUninitialized: false,
 };
 
 app.use(session(sessionConfig));
-app.use(cookieParser());
 app.use(checkSession);
 
 app.use('/', authRouter);

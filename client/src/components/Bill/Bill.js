@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import CardForBill from '../Card/CardForBill';
 import { getBillThunk } from '../../redux/actions/BillAction';
+import './Bill.css';
 
 function Bill() {
   const dispatch = useDispatch();
@@ -27,7 +28,7 @@ function Bill() {
 
   return (
     <div>
-      <ol className="menu mt-3">
+      <ol className="bill mt-3">
         {bill.map((el) => (
           <li key={el.id}>
             <CardForBill el={el} addToSum={addToSum} retracteToSum={retracteToSum} />

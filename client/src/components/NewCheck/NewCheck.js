@@ -24,18 +24,22 @@ function NewCheck() {
   return (
     <div>
       <ol className="newCheckList">
-        {newCheck.map((el) => (
-          <li key={el.data.id}>
-            <CardForNewCheck el={el} />
-          </li>
-        ))}
+        {newCheck.length
+          ? newCheck.map((el) => (
+            <li key={el.data.id} style={{ marginLeft: '1.5rem' }}>
+              <CardForNewCheck el={el} />
+            </li>
+          ))
+          : <h2>В чек еще ничего не добавлено</h2>}
       </ol>
 
+      {newCheck.length > 0 && (
       <div>
         Итого:
         {getSumOfCheck()}
         ₽
       </div>
+      )}
       {newCheck.length > 0 && (
       <Link to="/QR">
         <MyButton func={create()}>Оформить заказ</MyButton>

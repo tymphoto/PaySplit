@@ -1,19 +1,20 @@
-/* eslint-disable import/order */
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { Button } from 'react-bootstrap';
 import MyCard from '../Card/MyCard';
 import './Menu.css';
-import { useSelector } from 'react-redux';
 
 function CategoryProducts() {
   const { products } = useSelector((s) => s.menu);
+  const location = useNavigate();
 
   return (
     <div>
       {products && (
-      <Link to="/category">
+      <Button type="button" variant="outline-primary" className="mt-3" style={{ maxHeight: '55px' }} onClick={() => location('/category')}>
         Вернуться назад
-      </Link>
+      </Button>
       ) }
       <div>
         <ol className="menu mt-2">

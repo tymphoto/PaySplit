@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
-import CounterButton from '../MyButton/CounterButton';
 import CounterButtonForBill from '../MyButton/CounterButtonForBill';
-import CounterButtonForNewCheck from '../MyButton/CounterButtonForNewCheck';
-import MyButton from '../MyButton/MyButton';
 import Products from '../Products/Products';
 
 function CardForBill({ el, addToSum, retracteToSum }) {

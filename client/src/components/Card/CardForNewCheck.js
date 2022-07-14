@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { deleteFromCheck } from '../../redux/actions/CheckAction';
 import CounterButtonForNewCheck from '../MyButton/CounterButtonForNewCheck';
 import MyButton from '../MyButton/MyButton';
 import Products from '../Products/Products';
 
 function CardForNewCheck({ el }) {
-  // const [counter, setCounter] = useState(el.count);
-  // console.log(el, '====================');
   return (
     <div>
       <Products el={el.data} />

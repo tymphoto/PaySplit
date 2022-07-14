@@ -1,6 +1,4 @@
-/* eslint-disable jsx-a11y/alt-text */
-/* eslint-disable import/order */
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Card from 'react-bootstrap/Card';
 import { useNavigate } from 'react-router-dom';
@@ -11,11 +9,7 @@ function Category() {
   const { category } = useSelector((s) => s.menu);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [search, setSearch] = useState('');
-  console.log(category);
 
-  // const sortedMenu = [...products].filter((el) => el.name.toLowerCase()
-  //   .includes(search.toLowerCase()));
   const handleSubmit = (e) => {
     e.preventDefault();
     const { id } = e.target;
@@ -32,7 +26,7 @@ function Category() {
       {category && category.map((el) => (
         <Card className="mt-3 mb-2" onClick={handleSubmit} key={el.id}>
           {' '}
-          <img src={el.img} />
+          <img src={el.img} alt="Продукт" id={el.id} />
           <h3 id={el.id}>{el.name}</h3>
 
         </Card>

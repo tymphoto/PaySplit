@@ -1,5 +1,3 @@
-/* eslint-disable react/jsx-filename-extension */
-/* eslint-disable react/react-in-jsx-scope */
 import { Routes, Route } from 'react-router-dom';
 import './styles/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -12,7 +10,6 @@ import NewCheck from './components/NewCheck/NewCheck';
 import QR from './components/QR/QR';
 import Bill from './components/Bill/Bill';
 import NewProduct from './components/AddNewProduct/NewProduct';
-import MenuPage from './components/MenuPage/MenuPage';
 import CategoryProducts from './components/CategoryPage/CategoryProducts';
 
 function App({ getName }) {

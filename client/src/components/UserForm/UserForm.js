@@ -23,7 +23,7 @@ function UserForm() {
     e.preventDefault();
     dispatch(userAuthThunk(loginToggle, form));
     setForm({});
-    navigate('/');
+    navigate('/category');
   };
 
   return (

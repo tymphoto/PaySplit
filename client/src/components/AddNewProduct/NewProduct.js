@@ -93,7 +93,7 @@ function NewProduct() {
             htmlFor="fileInput"
             value={inputs.myFile}
           />
-          <Button className="mt-4" type="submit"> ok</Button>
+          <Button className="mt-4" type="submit">Добавить в меню</Button>
 
         </Form.Group>
       </Form>

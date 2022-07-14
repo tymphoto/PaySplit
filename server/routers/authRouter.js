@@ -8,6 +8,7 @@ router.get('/auth', async (req, res) => {
   try {
     const result = await Users.findByPk(req.session.userId);
     console.log('===========>>>', req.session);
+    // console.log(result)
     res.json(result);
   } catch (error) {
     console.log(error);
@@ -47,16 +48,21 @@ router.post('/register', async (req, res) => {
 
 router.post('/login', async (req, res) => {
   try {
+    console.log('in login');
     const { email, password } = req.body;
     const result = await Users.findOne({ where: { email } });
     if (await Bcrypt.compare(password, result.password)) {
       req.session.userName = result.name;
       req.session.userId = result.id;
-      return res.json(result);
+      req.session.save(() => res.json(result));
+      // console.log(result);
+      // console.log(req.session);
+      console.log('---', req.session);
     }
-    throw Error(result);
+    // throw Error(result);
   } catch (error) {
-    return res.json(error);
+    console.log('ERROR', error.message);
+    // return res.json(error);
   }
 });
 
